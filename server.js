@@ -7,8 +7,6 @@ const db=require('./config/db');
 
 app.use(bodyParser.urlencoded({extended:true}));
 
-
-
 MongoClient.connect(db.url, (err,database)=>{
   if(err) return console.log(err);
   require('./app/routes')(app,database);
